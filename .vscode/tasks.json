@@ -1,0 +1,59 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "echo",
+			"type": "shell",
+			"command": "echo ${fileBasenameNoExtension}"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe 生成活动文件", // 该label值是您将在任务列表中看到的；你可以随意命名它。
+			"command": "G:\\SOFTWARE\\mingw64\\bin\\g++.exe",
+			"args": [
+				// 此任务告诉 g++ 获取活动文件 (${file})，对其进行编译，
+				// 并在当前目录 (${fileDirname}) 中创建一个与活动文件同名但扩展名为 .exe 的可执行文件 
+				// ($ {fileBasenameNoExtension}.exe)，生成示例中的 helloworld.exe。
+				// 相当于指令g++ -g helloworld.cpp -o helloworld.exe
+				"-fdiagnostics-color=always", // 错误时彩色警告
+				"-g",
+				"${file}",
+				// -L指定第三方库的lib目录，默认没有
+				// -I指定第三方库的lib目录，默认没有
+				"-I",
+				"D:\\ceres\\sophus\\Sophus",
+				"-I",
+				"D:\\ceres\\eigen-3.4.0",
+				// ceres库
+				"-I",
+				"D:\\ceres\\install\\ceres\\include",
+				"-L",
+				"D:\\ceres\\install\\ceres\\lib",
+				// 依赖库glog
+				"-I",
+				"D:\\ceres\\install\\glog\\include",
+				"-L",
+				"D:\\ceres\\install\\glog\\lib",
+				// 依赖库gflags
+				"-I",
+				"D:\\ceres\\install\\gflags\\include",
+				"-L",
+				"D:\\ceres\\install\\gflags\\lib",
+				"-o",
+				// "${fileDirname}\\${fileBasenameNoExtension}.exe" // 定义.exe存放路径，与.cpp文件同级
+				"${workspaceRoot}\\exe\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "编译器: G:\\SOFTWARE\\mingw64\\bin\\g++.exe" // 该detail值是您将在任务列表中作为任务描述的值。强烈建议重命名此值以将其与类似任务区分开来。
+		},
+	]
+}

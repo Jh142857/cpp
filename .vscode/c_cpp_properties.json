@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:\\ceres\\sophus\\Sophus",
+                "D:\\ceres\\eigen-3.4.0",
+                "D:\\ceres\\install\\ceres\\include",
+                "D:\\ceres\\install\\glog\\include",
+                "D:\\ceres\\install\\gflags\\include",
+                "D:\\opencv\\build\\include"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "D:\\ceres\\install\\ceres\\lib",
+                    "D:\\ceres\\install\\glog\\lib",
+                    "D:\\ceres\\install\\gflags\\lib",
+                    "D:\\opencv\\build\\x64\\vc14\\lib"
+                ]
+            },
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "G:\\SOFTWARE\\mingw64\\bin\\g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

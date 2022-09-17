@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "C/C++: g++.exe 生成和调试活动文件", // 显示在vscode左侧运行和调试界面的名字
+            "type": "cppdbg",
+            "request": "launch",
+            // "program": "${fileDirname}\\${fileBasenameNoExtension}.exe", // 指定要调试的程序
+            "program": "${workspaceRoot}\\exe\\${fileBasenameNoExtension}.exe",
+            "args": [], // 在运行时传递给程序的参数数组
+            "stopAtEntry": false, // 默认情况下不添加任何拓展，设置为true时，在main方法时停止
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true, // 是否打开外部控制台
+            "MIMode": "gdb",
+            "miDebuggerPath": "G:\\SOFTWARE\\mingw64\\bin\\gdb.exe", // 编译器路径
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+        }
+    ],
+    "version": "2.0.0"
+}
